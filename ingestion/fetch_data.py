@@ -65,10 +65,9 @@ class ImfDataFetcher:
             host="localhost", database="imf_data", user="xiaolong", password="xiaolong"
         )
         cursor = conn.cursor()
-        cursor.execute(f"DELETE FROM {table};")
         for code, value in data.items():
             cursor.execute(
-                f"INSERT INTO {table} (code, {identifier}) VALUES (%s, %s)",
+                f"INSERT INTO {table} (code, {identifier}) VALUES (%s, %s) ON CONFLICT (code) DO NOTHING",
                 (code, value["label"]),
             )
         conn.commit()
@@ -81,10 +80,9 @@ class ImfDataFetcher:
             host="localhost", database="imf_data", user="xiaolong", password="xiaolong"
         )
         cursor = conn.cursor()
-        cursor.execute("DELETE FROM imf_indicators;")
         for indicator, value in indicators.items():
             cursor.execute(
-                "INSERT INTO imf_indicators (indicator, label, description, source, unit, dataset) VALUES (%s, %s, %s, %s, %s, %s)",
+                "INSERT INTO imf_indicators (indicator, label, description, source, unit, dataset) VALUES (%s, %s, %s, %s, %s, %s) ON CONFLICT (indicator) DO NOTHING",
                 (
                     indicator,
                     value["label"],
@@ -104,13 +102,11 @@ class ImfDataFetcher:
             host="localhost", database="imf_data", user="xiaolong", password="xiaolong"
         )
         cursor = conn.cursor()
-        cursor.execute("DELETE FROM imf_data;")
-
         for indicator, country_data in data.items():
             for country, year_data in country_data.items():
                 for year, value in year_data.items():
                     cursor.execute(
-                        "INSERT INTO imf_data (indicator, code, year, value) VALUES (%s, %s, %s, %s)",
+                        "INSERT INTO imf_data (indicator, code, year, value) VALUES (%s, %s, %s, %s) ON CONFLICT (indicator, code, year) DO NOTHING",
                         (indicator, country, year, value),
                     )
         conn.commit()
@@ -119,7 +115,9 @@ class ImfDataFetcher:
 
 
 if __name__ == "__main__":
-    fetcher = ImfDataFetcher(start_date=2000, end_date=2024, columns=["NGDP_RPCH", "NGDPD", "LUR", "PCPIPCH"])
+    fetcher = ImfDataFetcher(
+        start_date=2000, end_date=2024, columns=["NGDP_RPCH", "NGDPD", "LUR", "PCPIPCH"]
+    )
     indicators = fetcher.fetch_indicators()
     fetcher.insert_indicators_to_postgres(indicators)
 
