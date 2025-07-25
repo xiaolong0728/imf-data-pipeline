@@ -67,7 +67,7 @@ class ImfDataFetcher:
         cursor = conn.cursor()
         for code, value in data.items():
             cursor.execute(
-                f"INSERT INTO {table} (code, {identifier}) VALUES (%s, %s) ON CONFLICT (code) DO NOTHING",
+                f"INSERT INTO {table} (code, label) VALUES (%s, %s) ON CONFLICT (code) DO NOTHING",
                 (code, value["label"]),
             )
         conn.commit()
