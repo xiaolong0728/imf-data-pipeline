@@ -23,17 +23,17 @@ CREATE TABLE IF NOT EXISTS imf_data (
 
 CREATE TABLE IF NOT EXISTS imf_countries (    
     code VARCHAR(255) PRIMARY KEY,
-    countries VARCHAR(255)
+    label VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS imf_regions (
     code VARCHAR(255) PRIMARY KEY,
-    regions VARCHAR(255)
+    label VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS imf_groups (
     code VARCHAR(255) PRIMARY KEY,
-    groups VARCHAR(255)
+    label VARCHAR(255)
 );
 
 
