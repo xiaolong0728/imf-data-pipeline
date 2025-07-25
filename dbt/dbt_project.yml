@@ -1,0 +1,22 @@
+name: 'imf_project'
+version: '1.0.0'
+config-version: 2
+
+profile: 'imf_project'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+
+target-path: "target"
+clean-targets: ["target", "dbt_modules", "logs"]
+
+models:
+  imf_project:
+    staging:
+      +schema: staging
+      +materialized: view
+    marts:
+      +schema: analytics
+      +materialized: table

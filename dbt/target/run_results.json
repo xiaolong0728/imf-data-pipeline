@@ -1,0 +1,475 @@
+{
+    "metadata": {
+        "dbt_schema_version": "https://schemas.getdbt.com/dbt/run-results/v6.json",
+        "dbt_version": "1.10.5",
+        "generated_at": "2025-07-25T12:39:20.846711Z",
+        "invocation_id": "6cb86e0e-8691-4ce8-a5ce-1be1c4be9000",
+        "invocation_started_at": "2025-07-25T12:39:19.927350Z",
+        "env": {}
+    },
+    "results": [
+        {
+            "status": "success",
+            "timing": [
+                {
+                    "name": "compile",
+                    "started_at": "2025-07-25T12:39:20.536808Z",
+                    "completed_at": "2025-07-25T12:39:20.553738Z"
+                },
+                {
+                    "name": "execute",
+                    "started_at": "2025-07-25T12:39:20.559682Z",
+                    "completed_at": "2025-07-25T12:39:20.628435Z"
+                }
+            ],
+            "thread_id": "Thread-2 (worker)",
+            "execution_time": 0.09830093383789062,
+            "adapter_response": {
+                "_message": "CREATE VIEW",
+                "code": "CREATE VIEW",
+                "rows_affected": -1
+            },
+            "message": "CREATE VIEW",
+            "failures": null,
+            "unique_id": "model.imf_project._imf_data",
+            "compiled": true,
+            "compiled_code": "\n\nSELECT\n    code,\n    indicator,\n    year,\n    value::FLOAT\nFROM \"imf_data\".\"public\".\"imf_data\"",
+            "relation_name": "\"imf_data\".\"staging_staging\".\"_imf_data\"",
+            "batch_results": null
+        },
+        {
+            "status": "success",
+            "timing": [
+                {
+                    "name": "compile",
+                    "started_at": "2025-07-25T12:39:20.538337Z",
+                    "completed_at": "2025-07-25T12:39:20.541496Z"
+                },
+                {
+                    "name": "execute",
+                    "started_at": "2025-07-25T12:39:20.557833Z",
+                    "completed_at": "2025-07-25T12:39:20.629201Z"
+                }
+            ],
+            "thread_id": "Thread-3 (worker)",
+            "execution_time": 0.0989389419555664,
+            "adapter_response": {
+                "_message": "CREATE VIEW",
+                "code": "CREATE VIEW",
+                "rows_affected": -1
+            },
+            "message": "CREATE VIEW",
+            "failures": null,
+            "unique_id": "model.imf_project._imf_groups",
+            "compiled": true,
+            "compiled_code": "\n\nSELECT\n    code,\n    label\nFROM \"imf_data\".\"public\".\"imf_groups\"",
+            "relation_name": "\"imf_data\".\"staging_staging\".\"_imf_groups\"",
+            "batch_results": null
+        },
+        {
+            "status": "success",
+            "timing": [
+                {
+                    "name": "compile",
+                    "started_at": "2025-07-25T12:39:20.539590Z",
+                    "completed_at": "2025-07-25T12:39:20.562138Z"
+                },
+                {
+                    "name": "execute",
+                    "started_at": "2025-07-25T12:39:20.562537Z",
+                    "completed_at": "2025-07-25T12:39:20.632893Z"
+                }
+            ],
+            "thread_id": "Thread-4 (worker)",
+            "execution_time": 0.10150909423828125,
+            "adapter_response": {
+                "_message": "CREATE VIEW",
+                "code": "CREATE VIEW",
+                "rows_affected": -1
+            },
+            "message": "CREATE VIEW",
+            "failures": null,
+            "unique_id": "model.imf_project._imf_indicators",
+            "compiled": true,
+            "compiled_code": "\n\nSELECT\n    indicator,\n    label,\n    description,\n    unit,\n    source,\n    dataset\nFROM \"imf_data\".\"public\".\"imf_indicators\"\nWHERE indicator IS NOT NULL",
+            "relation_name": "\"imf_data\".\"staging_staging\".\"_imf_indicators\"",
+            "batch_results": null
+        },
+        {
+            "status": "success",
+            "timing": [
+                {
+                    "name": "compile",
+                    "started_at": "2025-07-25T12:39:20.532827Z",
+                    "completed_at": "2025-07-25T12:39:20.541247Z"
+                },
+                {
+                    "name": "execute",
+                    "started_at": "2025-07-25T12:39:20.541731Z",
+                    "completed_at": "2025-07-25T12:39:20.636560Z"
+                }
+            ],
+            "thread_id": "Thread-1 (worker)",
+            "execution_time": 0.10581088066101074,
+            "adapter_response": {
+                "_message": "CREATE VIEW",
+                "code": "CREATE VIEW",
+                "rows_affected": -1
+            },
+            "message": "CREATE VIEW",
+            "failures": null,
+            "unique_id": "model.imf_project._imf_countries",
+            "compiled": true,
+            "compiled_code": "\n\nSELECT\n    code,\n    label\nFROM \"imf_data\".\"public\".\"imf_countries\"",
+            "relation_name": "\"imf_data\".\"staging_staging\".\"_imf_countries\"",
+            "batch_results": null
+        },
+        {
+            "status": "success",
+            "timing": [
+                {
+                    "name": "compile",
+                    "started_at": "2025-07-25T12:39:20.634500Z",
+                    "completed_at": "2025-07-25T12:39:20.636859Z"
+                },
+                {
+                    "name": "execute",
+                    "started_at": "2025-07-25T12:39:20.637303Z",
+                    "completed_at": "2025-07-25T12:39:20.661142Z"
+                }
+            ],
+            "thread_id": "Thread-2 (worker)",
+            "execution_time": 0.027752161026000977,
+            "adapter_response": {
+                "_message": "CREATE VIEW",
+                "code": "CREATE VIEW",
+                "rows_affected": -1
+            },
+            "message": "CREATE VIEW",
+            "failures": null,
+            "unique_id": "model.imf_project._imf_regions",
+            "compiled": true,
+            "compiled_code": "\n\nSELECT\n    code,\n    label\nFROM \"imf_data\".\"public\".\"imf_regions\"",
+            "relation_name": "\"imf_data\".\"staging_staging\".\"_imf_regions\"",
+            "batch_results": null
+        },
+        {
+            "status": "success",
+            "timing": [
+                {
+                    "name": "compile",
+                    "started_at": "2025-07-25T12:39:20.664392Z",
+                    "completed_at": "2025-07-25T12:39:20.669273Z"
+                },
+                {
+                    "name": "execute",
+                    "started_at": "2025-07-25T12:39:20.672627Z",
+                    "completed_at": "2025-07-25T12:39:20.717939Z"
+                }
+            ],
+            "thread_id": "Thread-3 (worker)",
+            "execution_time": 0.05573391914367676,
+            "adapter_response": {
+                "_message": "CREATE VIEW",
+                "code": "CREATE VIEW",
+                "rows_affected": -1
+            },
+            "message": "CREATE VIEW",
+            "failures": null,
+            "unique_id": "model.imf_project.stg_all_indicators",
+            "compiled": true,
+            "compiled_code": "\n\nWITH base AS (\n    SELECT\n        d.code,\n        COALESCE(c.label, r.label, g.label) AS label,\n        d.year,\n        d.indicator,\n        d.value\n    FROM \"imf_data\".\"staging_staging\".\"_imf_data\" d\n    LEFT JOIN \"imf_data\".\"staging_staging\".\"_imf_countries\" c ON d.code = c.code\n    LEFT JOIN \"imf_data\".\"staging_staging\".\"_imf_regions\" r ON d.code = r.code\n    LEFT JOIN \"imf_data\".\"staging_staging\".\"_imf_groups\" g ON d.code = g.code\n)\n\nSELECT\n    code,\n    label,\n    year,\n    MAX(CASE WHEN indicator = 'NGDP_RPCH' THEN value END) AS gdp_growth,\n    MAX(CASE WHEN indicator = 'PCPIPCH' THEN value END) AS inflation_rate,\n    MAX(CASE WHEN indicator = 'NGDPD' THEN value END) AS nominal_gdp,\n    MAX(CASE WHEN indicator = 'LUR' THEN value END) AS unemployment_rate\nFROM base\nGROUP BY 1, 2, 3",
+            "relation_name": "\"imf_data\".\"staging_staging\".\"stg_all_indicators\"",
+            "batch_results": null
+        },
+        {
+            "status": "success",
+            "timing": [
+                {
+                    "name": "compile",
+                    "started_at": "2025-07-25T12:39:20.674504Z",
+                    "completed_at": "2025-07-25T12:39:20.680241Z"
+                },
+                {
+                    "name": "execute",
+                    "started_at": "2025-07-25T12:39:20.680912Z",
+                    "completed_at": "2025-07-25T12:39:20.726959Z"
+                }
+            ],
+            "thread_id": "Thread-2 (worker)",
+            "execution_time": 0.06253504753112793,
+            "adapter_response": {
+                "_message": "CREATE VIEW",
+                "code": "CREATE VIEW",
+                "rows_affected": -1
+            },
+            "message": "CREATE VIEW",
+            "failures": null,
+            "unique_id": "model.imf_project.stg_nominal_gdp",
+            "compiled": true,
+            "compiled_code": "\n\nWITH nominal_gdp AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_data\"\n    WHERE indicator = 'NGDP'\n),\ncountries AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_countries\"\n),\nregions AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_regions\"\n),\ngroups AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_groups\"\n)\n\nSELECT\n    n.indicator,\n    n.code,\n    COALESCE(c.label, r.label, g.label) AS label,\n    n.year,\n    n.value AS nominal_gdp\nFROM nominal_gdp n\nLEFT JOIN countries c ON n.code = c.code\nLEFT JOIN regions r ON n.code = r.code\nLEFT JOIN groups g ON n.code = g.code\nWHERE n.value IS NOT NULL",
+            "relation_name": "\"imf_data\".\"staging_staging\".\"stg_nominal_gdp\"",
+            "batch_results": null
+        },
+        {
+            "status": "success",
+            "timing": [
+                {
+                    "name": "compile",
+                    "started_at": "2025-07-25T12:39:20.667476Z",
+                    "completed_at": "2025-07-25T12:39:20.676250Z"
+                },
+                {
+                    "name": "execute",
+                    "started_at": "2025-07-25T12:39:20.676707Z",
+                    "completed_at": "2025-07-25T12:39:20.730154Z"
+                }
+            ],
+            "thread_id": "Thread-4 (worker)",
+            "execution_time": 0.06730985641479492,
+            "adapter_response": {
+                "_message": "CREATE VIEW",
+                "code": "CREATE VIEW",
+                "rows_affected": -1
+            },
+            "message": "CREATE VIEW",
+            "failures": null,
+            "unique_id": "model.imf_project.stg_gdp_growth",
+            "compiled": true,
+            "compiled_code": "\n\nWITH gdp_growth AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_data\"\n    WHERE indicator = 'NGDP_RPCH'\n),\ncountries AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_countries\"\n),\nregions AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_regions\"\n),\ngroups AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_groups\"\n)\n\nSELECT\n    g.indicator,\n    g.code,\n    COALESCE(c.label, r.label, g2.label) AS label,\n    g.year,\n    g.value AS gdp_growth\nFROM gdp_growth g\nLEFT JOIN countries c ON g.code = c.code\nLEFT JOIN regions r ON g.code = r.code\nLEFT JOIN groups g2 ON g.code = g2.code\nWHERE g.value IS NOT NULL",
+            "relation_name": "\"imf_data\".\"staging_staging\".\"stg_gdp_growth\"",
+            "batch_results": null
+        },
+        {
+            "status": "success",
+            "timing": [
+                {
+                    "name": "compile",
+                    "started_at": "2025-07-25T12:39:20.669653Z",
+                    "completed_at": "2025-07-25T12:39:20.676500Z"
+                },
+                {
+                    "name": "execute",
+                    "started_at": "2025-07-25T12:39:20.678594Z",
+                    "completed_at": "2025-07-25T12:39:20.730775Z"
+                }
+            ],
+            "thread_id": "Thread-1 (worker)",
+            "execution_time": 0.06532788276672363,
+            "adapter_response": {
+                "_message": "CREATE VIEW",
+                "code": "CREATE VIEW",
+                "rows_affected": -1
+            },
+            "message": "CREATE VIEW",
+            "failures": null,
+            "unique_id": "model.imf_project.stg_inflation",
+            "compiled": true,
+            "compiled_code": "\n\nWITH inflation AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_data\"\n    WHERE indicator = 'PCPIPCH'\n),\ncountries AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_countries\"\n),\nregions AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_regions\"\n),\ngroups AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_groups\"\n)\n\nSELECT\n    i.indicator,\n    i.code,\n    COALESCE(c.label, r.label, g.label) AS label,\n    i.year,\n    i.value AS inflation_rate\nFROM inflation i\nLEFT JOIN countries c ON i.code = c.code\nLEFT JOIN regions r ON i.code = r.code\nLEFT JOIN groups g ON i.code = g.code\nWHERE i.value IS NOT NULL",
+            "relation_name": "\"imf_data\".\"staging_staging\".\"stg_inflation\"",
+            "batch_results": null
+        },
+        {
+            "status": "success",
+            "timing": [
+                {
+                    "name": "compile",
+                    "started_at": "2025-07-25T12:39:20.727169Z",
+                    "completed_at": "2025-07-25T12:39:20.731267Z"
+                },
+                {
+                    "name": "execute",
+                    "started_at": "2025-07-25T12:39:20.732141Z",
+                    "completed_at": "2025-07-25T12:39:20.773028Z"
+                }
+            ],
+            "thread_id": "Thread-3 (worker)",
+            "execution_time": 0.04791593551635742,
+            "adapter_response": {
+                "_message": "CREATE VIEW",
+                "code": "CREATE VIEW",
+                "rows_affected": -1
+            },
+            "message": "CREATE VIEW",
+            "failures": null,
+            "unique_id": "model.imf_project.stg_unemployment",
+            "compiled": true,
+            "compiled_code": "\n\nWITH unemployment AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_data\"\n    WHERE indicator = 'LUR'\n),\ncountries AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_countries\"\n),\nregions AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_regions\"\n),\ngroups AS (\n    SELECT * FROM \"imf_data\".\"staging_staging\".\"_imf_groups\"\n)\n\nSELECT\n    u.indicator,\n    u.code,\n    COALESCE(c.label, r.label, g.label) AS label,\n    u.year,\n    u.value AS unemployment_rate\nFROM unemployment u\nLEFT JOIN countries c ON u.code = c.code\nLEFT JOIN regions r ON u.code = r.code\nLEFT JOIN groups g ON u.code = g.code\nWHERE u.value IS NOT NULL",
+            "relation_name": "\"imf_data\".\"staging_staging\".\"stg_unemployment\"",
+            "batch_results": null
+        },
+        {
+            "status": "success",
+            "timing": [
+                {
+                    "name": "compile",
+                    "started_at": "2025-07-25T12:39:20.740635Z",
+                    "completed_at": "2025-07-25T12:39:20.754827Z"
+                },
+                {
+                    "name": "execute",
+                    "started_at": "2025-07-25T12:39:20.757331Z",
+                    "completed_at": "2025-07-25T12:39:20.789377Z"
+                }
+            ],
+            "thread_id": "Thread-4 (worker)",
+            "execution_time": 0.052442073822021484,
+            "adapter_response": {
+                "_message": "CREATE VIEW",
+                "code": "CREATE VIEW",
+                "rows_affected": -1
+            },
+            "message": "CREATE VIEW",
+            "failures": null,
+            "unique_id": "model.imf_project.mart_growth_vs_inflation",
+            "compiled": true,
+            "compiled_code": " \n\nWITH base AS (\n    SELECT code,\n        label,\n        year,\n        gdp_growth,\n        inflation_rate\n    FROM \"imf_data\".\"staging_staging\".\"stg_all_indicators\"\n    WHERE gdp_growth IS NOT NULL\n        AND inflation_rate IS NOT NULL\n        AND year >= 2018\n),\n\nenriched AS (\n    SELECT *,\n        LAG(gdp_growth) OVER (\n            PARTITION BY code\n            ORDER BY year\n        ) AS gdp_growth_lag,\n        LAG(inflation_rate) OVER (\n            PARTITION BY code\n            ORDER BY year\n        ) AS inflation_lag\n    FROM base\n)\n\nSELECT code,\n    label,\n    year,\n    ROUND(gdp_growth::numeric, 2) AS gdp_growth,\n    ROUND(inflation_rate::numeric, 2) AS inflation_rate,\n    ROUND(gdp_growth_lag::numeric, 2) AS gdp_growth_lag,\n    ROUND(inflation_lag::numeric, 2) AS inflation_lag,\n    CASE\n        WHEN gdp_growth > 0\n        AND inflation_rate > 10 THEN 'Overheating'\n        WHEN gdp_growth < 0\n        AND inflation_rate > 5 THEN 'Stagflation'\n        WHEN gdp_growth < 0\n        AND inflation_rate < 2 THEN 'Deflationary recession'\n        ELSE 'Normal'\n    END AS macro_condition\nFROM enriched",
+            "relation_name": "\"imf_data\".\"staging_marts\".\"mart_growth_vs_inflation\"",
+            "batch_results": null
+        },
+        {
+            "status": "success",
+            "timing": [
+                {
+                    "name": "compile",
+                    "started_at": "2025-07-25T12:39:20.742115Z",
+                    "completed_at": "2025-07-25T12:39:20.754632Z"
+                },
+                {
+                    "name": "execute",
+                    "started_at": "2025-07-25T12:39:20.755348Z",
+                    "completed_at": "2025-07-25T12:39:20.789964Z"
+                }
+            ],
+            "thread_id": "Thread-1 (worker)",
+            "execution_time": 0.05263066291809082,
+            "adapter_response": {
+                "_message": "CREATE VIEW",
+                "code": "CREATE VIEW",
+                "rows_affected": -1
+            },
+            "message": "CREATE VIEW",
+            "failures": null,
+            "unique_id": "model.imf_project.mart_growth_vs_unemployment",
+            "compiled": true,
+            "compiled_code": " \n\nWITH base AS (\n    SELECT code,\n        label,\n        year,\n        gdp_growth,\n        unemployment_rate\n    FROM \"imf_data\".\"staging_staging\".\"stg_all_indicators\"\n    WHERE gdp_growth IS NOT NULL\n        AND unemployment_rate IS NOT NULL\n        AND year >= 2018\n),\n\nenriched AS (\n    SELECT *,\n        unemployment_rate - LAG(unemployment_rate) OVER (\n            PARTITION BY code\n            ORDER BY year\n        ) AS unemployment_change,\n        gdp_growth - LAG(gdp_growth) OVER (\n            PARTITION BY code\n            ORDER BY year\n        ) AS gdp_growth_change\n    FROM base\n)\n\nSELECT code,\n    label,\n    year,\n    ROUND(gdp_growth::numeric, 2) AS gdp_growth,\n    ROUND(unemployment_rate::numeric, 2) AS unemployment_rate,\n    ROUND(gdp_growth_change::numeric, 2) AS gdp_growth_change,\n    ROUND(unemployment_change::numeric, 2) AS unemployment_change,\n    CASE\n        WHEN gdp_growth > 0\n        AND unemployment_change > 0 THEN TRUE\n        WHEN gdp_growth < 0\n        AND unemployment_change < 0 THEN TRUE\n        ELSE FALSE\n    END AS mismatch_growth_unemployment\nFROM enriched",
+            "relation_name": "\"imf_data\".\"staging_marts\".\"mart_growth_vs_unemployment\"",
+            "batch_results": null
+        },
+        {
+            "status": "success",
+            "timing": [
+                {
+                    "name": "compile",
+                    "started_at": "2025-07-25T12:39:20.738388Z",
+                    "completed_at": "2025-07-25T12:39:20.743703Z"
+                },
+                {
+                    "name": "execute",
+                    "started_at": "2025-07-25T12:39:20.743966Z",
+                    "completed_at": "2025-07-25T12:39:20.803192Z"
+                }
+            ],
+            "thread_id": "Thread-2 (worker)",
+            "execution_time": 0.06695985794067383,
+            "adapter_response": {
+                "_message": "SELECT 1583",
+                "code": "SELECT",
+                "rows_affected": 1583
+            },
+            "message": "SELECT 1583",
+            "failures": null,
+            "unique_id": "model.imf_project.mart_dashboard",
+            "compiled": true,
+            "compiled_code": "\n\nWITH base AS (\n    SELECT\n        code,\n        label,\n        year,\n        gdp_growth,\n        nominal_gdp,\n        unemployment_rate,\n        inflation_rate\n    FROM \"imf_data\".\"staging_staging\".\"stg_all_indicators\"\n    WHERE year >= 2018\n)\n\nSELECT\n    code,\n    label,\n    year,\n    ROUND(gdp_growth::numeric, 2) AS gdp_growth,\n    ROUND(nominal_gdp::numeric, 2) AS nominal_gdp_usd,\n    ROUND(unemployment_rate::numeric, 2) AS unemployment_rate,\n    ROUND(inflation_rate::numeric, 2) AS inflation_rate,\n\n    CASE WHEN gdp_growth < 0 THEN TRUE ELSE FALSE END AS recession,\n    CASE WHEN inflation_rate > 10 THEN TRUE ELSE FALSE END AS high_inflation,\n    CASE WHEN unemployment_rate > 10 THEN TRUE ELSE FALSE END AS high_unemployment\n\nFROM base",
+            "relation_name": "\"imf_data\".\"staging_marts\".\"mart_dashboard\"",
+            "batch_results": null
+        },
+        {
+            "status": "success",
+            "timing": [
+                {
+                    "name": "compile",
+                    "started_at": "2025-07-25T12:39:20.774859Z",
+                    "completed_at": "2025-07-25T12:39:20.780696Z"
+                },
+                {
+                    "name": "execute",
+                    "started_at": "2025-07-25T12:39:20.781057Z",
+                    "completed_at": "2025-07-25T12:39:20.839457Z"
+                }
+            ],
+            "thread_id": "Thread-3 (worker)",
+            "execution_time": 0.06528329849243164,
+            "adapter_response": {
+                "_message": "SELECT 228",
+                "code": "SELECT",
+                "rows_affected": 228
+            },
+            "message": "SELECT 228",
+            "failures": null,
+            "unique_id": "model.imf_project.mart_profiles",
+            "compiled": true,
+            "compiled_code": "\n\nWITH base AS (\n    SELECT\n        code,\n        label,\n        year,\n        gdp_growth,\n        nominal_gdp,\n        unemployment_rate,\n        inflation_rate,\n        ROW_NUMBER() OVER (PARTITION BY code ORDER BY year DESC) AS rn\n    FROM \"imf_data\".\"staging_staging\".\"stg_all_indicators\"\n),\n\nlatest AS (\n    SELECT *\n    FROM base\n    WHERE rn = 1\n)\n\nSELECT\n    code,\n    label,\n    year,\n    ROUND(gdp_growth::numeric, 2) AS gdp_growth,\n    ROUND(nominal_gdp::numeric, 2) AS nominal_gdp,\n    ROUND(unemployment_rate::numeric, 2) AS unemployment_rate,\n    ROUND(inflation_rate::numeric, 2) AS inflation_rate,\n\n    CASE WHEN gdp_growth < 0 THEN TRUE ELSE FALSE END AS is_in_recession,\n    CASE WHEN inflation_rate > 10 THEN TRUE ELSE FALSE END AS high_inflation,\n    CASE WHEN unemployment_rate > 10 THEN TRUE ELSE FALSE END AS high_unemployment\n\nFROM latest\nWHERE label IS NOT NULL",
+            "relation_name": "\"imf_data\".\"staging_marts\".\"mart_profiles\"",
+            "batch_results": null
+        }
+    ],
+    "elapsed_time": 0.40909504890441895,
+    "args": {
+        "macro_debugging": false,
+        "state_modified_compare_more_unrendered_values": false,
+        "log_path": "/Users/xiaolong/imf-data-pipeline/dbt/logs",
+        "printer_width": 80,
+        "require_yaml_configuration_for_mf_time_spines": false,
+        "exclude": [],
+        "project_dir": "/Users/xiaolong/imf-data-pipeline/dbt",
+        "require_generic_test_arguments_property": false,
+        "profiles_dir": "/Users/xiaolong/imf-data-pipeline/dbt",
+        "use_colors_file": true,
+        "empty": false,
+        "require_nested_cumulative_type_params": false,
+        "introspect": true,
+        "upload_to_artifacts_ingest_api": false,
+        "populate_cache": true,
+        "require_all_warnings_handled_by_warn_error": false,
+        "strict_mode": false,
+        "log_level_file": "debug",
+        "invocation_command": "dbt run",
+        "print": true,
+        "log_file_max_bytes": 10485760,
+        "favor_state": false,
+        "defer": false,
+        "cache_selected_only": false,
+        "log_level": "info",
+        "select": [],
+        "show_all_deprecations": false,
+        "use_colors": true,
+        "write_json": true,
+        "require_explicit_package_overrides_for_builtin_materializations": true,
+        "partial_parse_file_diff": true,
+        "log_format_file": "debug",
+        "require_resource_names_without_spaces": true,
+        "use_fast_test_edges": false,
+        "log_format": "default",
+        "warn_error_options": {
+            "error": [],
+            "warn": [],
+            "silence": []
+        },
+        "send_anonymous_usage_stats": true,
+        "source_freshness_run_project_hooks": true,
+        "show_resource_report": false,
+        "skip_nodes_if_on_run_start_fails": false,
+        "version_check": true,
+        "indirect_selection": "eager",
+        "quiet": false,
+        "validate_macro_args": false,
+        "static_parser": true,
+        "which": "run",
+        "vars": {},
+        "state_modified_compare_vars": false,
+        "partial_parse": true,
+        "require_batched_execution_for_custom_microbatch_strategy": false
+    }
+}

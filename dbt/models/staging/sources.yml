@@ -1,0 +1,9 @@
+sources:
+  - name: public
+    schema: public
+    tables:
+      - name: imf_data
+      - name: imf_indicators
+      - name: imf_countries
+      - name: imf_regions
+      - name: imf_groups

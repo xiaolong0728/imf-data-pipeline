@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: mart_dashboard
+    description: >
+      Dashboard-ready table combining latest economic indicators per country/year, for easy visualization in BI tools.
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: year
+        tests: [not_null]
+
+  - name: mart_growth_vs_inflation
+    description: >
+      Compares GDP growth and inflation, with macroeconomic interpretation labels (e.g., stagflation, overheating).
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: year
+        tests: [not_null]
+
+  - name: mart_growth_vs_unemployment
+    description: >
+      Compares GDP growth and unemployment, with macroeconomic interpretation labels (e.g., mismatch, recession).
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: year
+        tests: [not_null]
+
+  - name: mart_profiles
+    description: >
+      Profiles of countries/regions/groups, with latest economic indicators and risk flags.
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: year
+        tests: [not_null]

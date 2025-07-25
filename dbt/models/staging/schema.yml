@@ -1,0 +1,122 @@
+version: 2
+
+models:
+  - name: stg_all_indicators
+    description: >
+      Table combining all IMF economic indicators for each country/region/group.
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: year
+        tests: [not_null]
+
+  - name: stg_gdp_growth
+    description: >
+      Table combining GDP growth for each country/region/group.
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: year
+        tests: [not_null]
+
+  - name: stg_inflation
+    description: >
+      Table combining inflation for each country/region/group.
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: year
+        tests: [not_null]
+
+  - name: stg_nominal_gdp
+    description: >
+      Table combining nominal GDP for each country/region/group.
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: year
+        tests: [not_null] 
+
+  - name: stg_unemployment
+    description: >
+      Table combining unemployment for each country/region/group.
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: year
+        tests: [not_null]
+
+  - name: stg_imf_countries
+    description: >
+      Table combining IMF countries.
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: label
+        tests: [not_null]
+
+  - name: stg_imf_regions
+    description: >
+      Table combining IMF regions.
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: label
+        tests: [not_null]
+
+  - name: stg_imf_groups
+    description: >
+      Table combining IMF groups.
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: label
+        tests: [not_null]
+
+  - name: _imf_countries
+    description: >
+      Table combining IMF countries.
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: label
+        tests: [not_null]
+
+  - name: _imf_regions
+    description: >
+      Table combining IMF regions.
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: label
+        tests: [not_null]
+
+  - name: _imf_groups
+    description: >
+      Table combining IMF groups.
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: label
+        tests: [not_null]
+
+  - name: _imf_indicators
+    description: >
+      Table combining IMF indicators.
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: label
+        tests: [not_null]
+
+  - name: _imf_data
+    description: >
+      Table combining IMF data.
+    config:
+      materialized: view
+      schema: staging
+    columns:
+      - name: code
+        tests: [not_null]
+      - name: year
+        tests: [not_null]
