@@ -18,6 +18,16 @@ models:
         tests: [not_null]
       - name: year
         tests: [not_null]
+      - name: gdp_growth
+        tests: [not_null]
+        description: "GDP growth rate"
+      - name: inflation_rate
+        tests: [not_null]
+        description: "Inflation rate"
+      - name: macro_condition
+        tests: [not_null, accepted_values]
+        description: "Macroeconomic condition classification"
+        accepted_values: ["Overheating", "Stagflation", "Deflationary recession", "Normal"]
 
   - name: mart_growth_vs_unemployment
     description: >

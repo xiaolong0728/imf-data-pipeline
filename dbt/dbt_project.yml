@@ -20,3 +20,14 @@ models:
     marts:
       +schema: analytics
       +materialized: table
+
+
+vars:
+
+  overheating_inflation_threshold: 10    # High inflation with growth
+  stagflation_inflation_threshold: 5     # High inflation with recession
+  deflation_inflation_threshold: 2       # Low inflation with recession
+  unemployment_threshold: 10             # High unemployment
+  
+  start_year: 2020
+  end_year: 2024

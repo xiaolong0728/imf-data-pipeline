@@ -9,7 +9,7 @@ WITH base AS (
     FROM {{ ref('stg_all_indicators') }}
     WHERE gdp_growth IS NOT NULL
         AND unemployment_rate IS NOT NULL
-        AND year >= 2018
+        AND year >= {{ var('start_year') }} AND year <= {{ var('end_year') }}
 ),
 
 enriched AS (

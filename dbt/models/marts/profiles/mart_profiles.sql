@@ -29,8 +29,8 @@ SELECT
     ROUND(inflation_rate::numeric, 2) AS inflation_rate,
 
     CASE WHEN gdp_growth < 0 THEN TRUE ELSE FALSE END AS is_in_recession,
-    CASE WHEN inflation_rate > 10 THEN TRUE ELSE FALSE END AS high_inflation,
-    CASE WHEN unemployment_rate > 10 THEN TRUE ELSE FALSE END AS high_unemployment
+    CASE WHEN inflation_rate > {{ var('overheating_inflation_threshold') }} THEN TRUE ELSE FALSE END AS high_inflation,
+    CASE WHEN unemployment_rate > {{ var('unemployment_threshold') }} THEN TRUE ELSE FALSE END AS high_unemployment
 
 FROM latest
 WHERE label IS NOT NULL

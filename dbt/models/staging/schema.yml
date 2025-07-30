@@ -46,33 +46,6 @@ models:
       - name: year
         tests: [not_null]
 
-  - name: stg_imf_countries
-    description: >
-      Table combining IMF countries.
-    columns:
-      - name: code
-        tests: [not_null]
-      - name: label
-        tests: [not_null]
-
-  - name: stg_imf_regions
-    description: >
-      Table combining IMF regions.
-    columns:
-      - name: code
-        tests: [not_null]
-      - name: label
-        tests: [not_null]
-
-  - name: stg_imf_groups
-    description: >
-      Table combining IMF groups.
-    columns:
-      - name: code
-        tests: [not_null]
-      - name: label
-        tests: [not_null]
-
   - name: _imf_countries
     description: >
       Table combining IMF countries.

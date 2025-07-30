@@ -9,7 +9,7 @@ WITH base AS (
     FROM {{ ref('stg_all_indicators') }}
     WHERE gdp_growth IS NOT NULL
         AND inflation_rate IS NOT NULL
-        AND year >= 2018
+        AND year >= {{ var('start_year') }} AND year <= {{ var('end_year') }}
 ),
 
 enriched AS (
@@ -34,11 +34,11 @@ SELECT code,
     ROUND(inflation_lag::numeric, 2) AS inflation_lag,
     CASE
         WHEN gdp_growth > 0
-        AND inflation_rate > 10 THEN 'Overheating'
+        AND inflation_rate > {{ var('overheating_inflation_threshold') }} THEN 'Overheating'
         WHEN gdp_growth < 0
-        AND inflation_rate > 5 THEN 'Stagflation'
+        AND inflation_rate > {{ var('stagflation_inflation_threshold') }} THEN 'Stagflation'
         WHEN gdp_growth < 0
-        AND inflation_rate < 2 THEN 'Deflationary recession'
+        AND inflation_rate < {{ var('deflation_inflation_threshold') }} THEN 'Deflationary recession'
         ELSE 'Normal'
     END AS macro_condition
 FROM enriched

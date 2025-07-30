@@ -6,7 +6,7 @@ imf_project:
       host: localhost
       user: xiaolong
       password: xiaolong
-      port: 5432
+      port: 5433
       dbname: imf_data
-      schema: staging
+      schema: dbt
       threads: 4

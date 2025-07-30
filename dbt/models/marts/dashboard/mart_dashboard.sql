@@ -10,7 +10,7 @@ WITH base AS (
         unemployment_rate,
         inflation_rate
     FROM {{ ref('stg_all_indicators') }}
-    WHERE year >= 2018
+    WHERE year >= 2020 AND year <= 2024
 )
 
 SELECT
@@ -27,3 +27,4 @@ SELECT
     CASE WHEN unemployment_rate > 10 THEN TRUE ELSE FALSE END AS high_unemployment
 
 FROM base
+ORDER BY code, year
